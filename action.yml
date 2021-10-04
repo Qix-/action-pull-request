@@ -60,6 +60,10 @@ inputs:
     description: List of users to ignore, coma separated
     required: false
     default: "dependabot"
+  path:
+    description: The path relative to $GITHUB_WORKSPACE to switch to before running
+    required: false
+    default: ""
 outputs:
   url:
     description: Pull request URL.

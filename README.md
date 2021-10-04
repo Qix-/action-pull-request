@@ -54,6 +54,7 @@ Features:
         new_string: "** Automatic pull request**"
         get_diff: true
         ignore_users: "dependabot"
+        path: "./path/to/repo"
 ```
 
 
@@ -74,6 +75,7 @@ Features:
 | target_branch  | No       | `master`                      | Name of the target branch. Change it if you use `main`.                                                                  |
 | template       | No       | `""`                          | Template file location.                                                                                                  |
 | title          | No       | *subject of the first commit* | Pull request title.                                                                                                      |
+| path           | No       | `./`                          | The path relative to $GITHUB_WORKSPACE to switch to before running                                                       |
 
 
 | Outputs | Description      |

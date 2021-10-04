@@ -20,6 +20,7 @@ echo "  get_diff: ${INPUT_GET_DIFF}"
 echo "  old_string: ${INPUT_OLD_STRING}"
 echo "  new_string: ${INPUT_NEW_STRING}"
 echo "  ignore_users: ${INPUT_IGNORE_USERS}"
+echo "  path: ${INPUT_PATH}"
 
 # Skip whole script to not cause errors
 IFS=',' read -r -a IGNORE_USERS <<< "${INPUT_IGNORE_USERS}"
@@ -38,6 +39,11 @@ if [[ -z "${INPUT_GITHUB_TOKEN}" ]]; then
   MESSAGE='Missing input "github_token: ${{ secrets.GITHUB_TOKEN }}".'
   echo "[ERROR] ${MESSAGE}"
   exit 1
+fi
+
+if [[ -n "${INPUT_PATH}" ]]; then
+  echo -e "\nEntering ${INPUT_PATH}..."
+  cd "${INPUT_PATH}"
 fi
 
 echo -e "\nSetting GitHub credentials..."
